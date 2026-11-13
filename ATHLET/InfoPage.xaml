@@ -1,0 +1,16 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Athlet.InfoPage" Title="О магазине">
+  <ScrollView><VerticalStackLayout Padding="16" Spacing="12">
+    <Label Text="ATHLET" FontSize="30" FontAttributes="Bold" CharacterSpacing="4" TextColor="{StaticResource Accent}"/>
+    <Label Text="Магазин спортивного питания: протеин, креатин, аминокислоты, гейнеры, витамины и батончики для тех, кто тренируется и следит за рационом." TextColor="{StaticResource Muted}"/>
+    <Border Padding="16" StrokeShape="RoundRectangle 16" Stroke="Transparent" BackgroundColor="{StaticResource Card}">
+      <VerticalStackLayout Spacing="8">
+        <Label Text="Контакты" FontSize="18" FontAttributes="Bold"/>
+        <Label Text="📞 +7 (800) 123-45-67"/>
+        <Label Text="✉️ info@athlet.example"/>
+        <Label Text="📍 ул. Спортивная, 10"/>
+        <Label Text="🕘 Ежедневно с 9:00 до 21:00"/>
+      </VerticalStackLayout>
+    </Border>
+    <Button Text="Позвонить в магазин" Style="{StaticResource Btn}" Clicked="OnCall"/>
+  </VerticalStackLayout></ScrollView>
+</ContentPage>

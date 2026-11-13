@@ -1,0 +1,12 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Athlet.CatalogPage" Title="Каталог">
+  <Grid RowDefinitions="Auto,Auto,*" Padding="12" RowSpacing="10">
+    <SearchBar x:Name="Search" Placeholder="Поиск по каталогу" BackgroundColor="{StaticResource Card}" TextChanged="OnText"/>
+    <CollectionView x:Name="Cats" Grid.Row="1" HeightRequest="44" SelectionMode="Single" ItemTemplate="{StaticResource Chip}" SelectionChanged="OnCat">
+      <CollectionView.ItemsLayout><LinearItemsLayout Orientation="Horizontal" ItemSpacing="8"/></CollectionView.ItemsLayout>
+    </CollectionView>
+    <CollectionView x:Name="List" Grid.Row="2" SelectionMode="Single" ItemTemplate="{StaticResource ProductCard}" SelectionChanged="OnProduct">
+      <CollectionView.ItemsLayout><GridItemsLayout Orientation="Vertical" Span="2"/></CollectionView.ItemsLayout>
+      <CollectionView.EmptyView><Label Text="Ничего не найдено" TextColor="{StaticResource Muted}" HorizontalOptions="Center" Margin="0,40"/></CollectionView.EmptyView>
+    </CollectionView>
+  </Grid>
+</ContentPage>

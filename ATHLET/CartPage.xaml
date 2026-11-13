@@ -1,0 +1,28 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Athlet.CartPage" Title="Корзина">
+  <Grid RowDefinitions="*,Auto" Padding="12">
+    <CollectionView x:Name="List">
+      <CollectionView.EmptyView><Label Text="Корзина пуста" TextColor="{StaticResource Muted}" HorizontalOptions="Center" Margin="0,40"/></CollectionView.EmptyView>
+      <CollectionView.ItemTemplate><DataTemplate>
+        <Border Margin="0,0,0,8" Padding="12" StrokeShape="RoundRectangle 16" Stroke="Transparent" BackgroundColor="{StaticResource Card}">
+          <Grid ColumnDefinitions="56,*,Auto" ColumnSpacing="10">
+            <Label Text="{Binding P.Emoji}" FontSize="36" VerticalOptions="Center"/>
+            <VerticalStackLayout Grid.Column="1" Spacing="4">
+              <Label Text="{Binding P.Name}" FontAttributes="Bold" MaxLines="2"/>
+              <Label Text="{Binding SumText}" TextColor="{StaticResource Accent}" FontAttributes="Bold"/>
+              <HorizontalStackLayout Spacing="12">
+                <Button Text="−" Style="{StaticResource Mini}" Clicked="OnMinus"/>
+                <Label Text="{Binding Qty}" VerticalOptions="Center" FontSize="16"/>
+                <Button Text="+" Style="{StaticResource Mini}" Clicked="OnPlus"/>
+              </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <Button Grid.Column="2" Text="✕" Style="{StaticResource Mini}" VerticalOptions="Start" Clicked="OnDel"/>
+          </Grid>
+        </Border>
+      </DataTemplate></CollectionView.ItemTemplate>
+    </CollectionView>
+    <VerticalStackLayout Grid.Row="1" Spacing="10" Padding="0,8,0,0">
+      <Label x:Name="TotalL" FontSize="20" FontAttributes="Bold"/>
+      <Button x:Name="Checkout" Text="Оформить заказ" Style="{StaticResource Btn}" Clicked="OnCheckout"/>
+    </VerticalStackLayout>
+  </Grid>
+</ContentPage>

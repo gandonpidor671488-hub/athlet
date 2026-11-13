@@ -1,0 +1,15 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Athlet.HomePage" Title="ATHLET">
+  <ScrollView><VerticalStackLayout Padding="16" Spacing="14">
+    <Label Text="ATHLET" FontSize="34" FontAttributes="Bold" CharacterSpacing="4" TextColor="{StaticResource Accent}"/>
+    <Label Text="Спортивное питание для результата" TextColor="{StaticResource Muted}"/>
+    <SearchBar x:Name="Search" Placeholder="Найти товар" BackgroundColor="{StaticResource Card}" SearchButtonPressed="OnSearch"/>
+    <Label Text="Популярные категории" FontSize="18" FontAttributes="Bold"/>
+    <CollectionView x:Name="Cats" HeightRequest="48" SelectionMode="Single" ItemTemplate="{StaticResource Chip}" SelectionChanged="OnCat">
+      <CollectionView.ItemsLayout><LinearItemsLayout Orientation="Horizontal" ItemSpacing="8"/></CollectionView.ItemsLayout>
+    </CollectionView>
+    <Label Text="Популярные товары" FontSize="18" FontAttributes="Bold"/>
+    <CollectionView x:Name="Top" HeightRequest="480" SelectionMode="Single" ItemTemplate="{StaticResource ProductCard}" SelectionChanged="OnProduct">
+      <CollectionView.ItemsLayout><GridItemsLayout Orientation="Vertical" Span="2"/></CollectionView.ItemsLayout>
+    </CollectionView>
+  </VerticalStackLayout></ScrollView>
+</ContentPage>

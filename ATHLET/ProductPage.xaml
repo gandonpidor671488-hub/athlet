@@ -1,0 +1,16 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Athlet.ProductPage">
+  <ScrollView><VerticalStackLayout Padding="16" Spacing="10">
+    <Border BackgroundColor="#2A313B" HeightRequest="200" StrokeShape="RoundRectangle 20" Stroke="Transparent">
+      <Label x:Name="Emoji" FontSize="90" HorizontalOptions="Center" VerticalOptions="Center"/>
+    </Border>
+    <Label x:Name="Brand" TextColor="{StaticResource Muted}"/>
+    <Label x:Name="NameL" FontSize="24" FontAttributes="Bold"/>
+    <Label x:Name="Weight" TextColor="{StaticResource Muted}"/>
+    <Label x:Name="Price" FontSize="28" FontAttributes="Bold" TextColor="{StaticResource Accent}"/>
+    <Label Text="Описание" FontSize="16" FontAttributes="Bold" Margin="0,8,0,0"/>
+    <Label x:Name="Desc" TextColor="{StaticResource Muted}"/>
+    <Label Text="Состав" FontSize="16" FontAttributes="Bold" Margin="0,8,0,0"/>
+    <Label x:Name="Comp" TextColor="{StaticResource Muted}"/>
+    <Button x:Name="Add" Text="В корзину" Style="{StaticResource Btn}" Margin="0,16,0,0" Clicked="OnAdd"/>
+  </VerticalStackLayout></ScrollView>
+</ContentPage>

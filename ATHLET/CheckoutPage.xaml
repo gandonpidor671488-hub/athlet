@@ -1,0 +1,20 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Athlet.CheckoutPage" Title="Оформление заказа">
+  <ScrollView><Grid Padding="16">
+    <VerticalStackLayout x:Name="Form" Spacing="12">
+      <Label x:Name="TotalL" FontSize="22" FontAttributes="Bold" TextColor="{StaticResource Accent}"/>
+      <Entry x:Name="NameE" Placeholder="Ваше имя" BackgroundColor="{StaticResource Card}"/>
+      <Entry x:Name="Phone" Placeholder="Телефон" Keyboard="Telephone" BackgroundColor="{StaticResource Card}"/>
+      <Label Text="Способ получения" FontAttributes="Bold" Margin="0,6,0,0"/>
+      <RadioButton x:Name="Pickup" Content="Самовывоз из магазина" GroupName="m" IsChecked="True" TextColor="White" CheckedChanged="OnMethod"/>
+      <RadioButton x:Name="Delivery" Content="Доставка курьером" GroupName="m" TextColor="White"/>
+      <Entry x:Name="Address" Placeholder="Адрес доставки" IsVisible="False" BackgroundColor="{StaticResource Card}"/>
+      <Label x:Name="Err" TextColor="#FF6B6B"/>
+      <Button Text="Подтвердить заказ" Style="{StaticResource Btn}" Clicked="OnConfirm"/>
+    </VerticalStackLayout>
+    <VerticalStackLayout x:Name="Done" IsVisible="False" Spacing="16" VerticalOptions="Center" Margin="0,80">
+      <Label Text="✅" FontSize="64" HorizontalOptions="Center"/>
+      <Label x:Name="DoneL" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+      <Button Text="На главную" Style="{StaticResource Btn}" Clicked="OnHome"/>
+    </VerticalStackLayout>
+  </Grid></ScrollView>
+</ContentPage>
